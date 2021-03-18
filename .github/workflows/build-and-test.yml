@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Restore dependencies
-      run: dotnet restore $GITHUB_WORKSPACE/src/MyDemoApp/MyDemopApp.sln
+      run: dotnet restore $GITHUB_WORKSPACE/src/MyDemoApp/MyDemoApp.sln
     - name: Build
-      run: dotnet build $GITHUB_WORKSPACE/src/MyDemoApp/MyDemopApp.sln --no-restore
+      run: dotnet build $GITHUB_WORKSPACE/src/MyDemoApp/MyDemoApp.sln --no-restore
     - name: Test
-      run: dotnet test $GITHUB_WORKSPACE/src/MyDemoApp/MyDemopApp.sln --no-build --verbosity normal
+      run: dotnet test $GITHUB_WORKSPACE/src/MyDemoApp/MyDemoApp.sln --no-build --verbosity normal
