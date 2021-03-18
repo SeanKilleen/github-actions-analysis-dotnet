@@ -23,3 +23,10 @@ jobs:
       run: dotnet build $GITHUB_WORKSPACE/src/MyDemoApp/MyDemoApp.sln --no-restore
     - name: Test
       run: dotnet test $GITHUB_WORKSPACE/src/MyDemoApp/MyDemoApp.sln --no-build --verbosity normal
+    - name: Run Coverlet for Coverage
+      uses: b3b00/coverlet-action@1.1.0
+      with:
+        testProject: '$GITHUB_WORKSPACE/src/MyDemoApp/MyDemoApp.Tests/MyDemoApp.Tests.csproj'
+        output: 'lcov.info'
+        outputFormat: 'lcov'
+        excludes: '[program]*,[test]test.*'
